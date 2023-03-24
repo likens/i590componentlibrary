@@ -1,0 +1,108 @@
+.switch__label {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.switch__label--right .switch__text {
+	order: 1;
+}
+
+.switch__control {
+	position: relative;
+}
+
+.switch__track {
+	width: 52px;
+	height: 32px;
+	border-radius: 20px;
+	border: 2px solid var(--sugarPine);
+	background: var(--greening);
+}
+
+.switch__thumb {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: var(--sugarPine);
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateX(8px) translateY(-50%);
+	transform-origin: left;
+	transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), width 150ms cubic-bezier(0.4, 0, 0.2, 1), height 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch__input {
+	appearance: none;
+	display: none;
+}
+
+.switch__label--checked .switch__track {
+	background: var(--radicalGreen);
+	border-color: var(--radicalGreen)
+}
+
+.switch__label--checked .switch__thumb {
+	transform: translateX(24px) translateY(-50%);
+	background: var(--white);
+    width: 24px;
+    height: 24px;
+}
+
+.switch__label--disabled {
+	cursor: not-allowed;
+}
+
+.switch__label--disabled .switch__track {
+	opacity: 12%;
+}
+
+.switch__label--disabled .switch__thumb {
+	opacity: 38%;
+}
+
+.switch__label--disabled.switch__label--checked .switch__thumb {
+	opacity: 1;
+}
+
+.switch__icon,
+.switch__icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.switch__icon--off {
+    fill: var(--white);
+}
+
+.switch__icon--on {
+    fill: rgba(0, 0, 0, 0.9);
+}
+
+
+.switch__label--icon-off .switch__thumb,
+.switch__label--icon-on .switch__thumb {
+    width: 24px;
+    height: 24px;
+    transform: translateX(6px) translateY(-50%);
+}
+
+.switch__label--icon-off.switch__label--checked .switch__thumb,
+.switch__label--icon-on.switch__label--checked .switch__thumb {
+    transform: translateX(24px) translateY(-50%);
+}
+
+.switch__label--icon-off.switch__label--checked .switch__icon--off,
+.switch__label--icon-off .switch__icon--on {
+    display: none;
+}
+
+.switch__label--icon-on.switch__label--checked .switch__icon--on {
+    display: block;
+}

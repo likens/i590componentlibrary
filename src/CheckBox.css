@@ -1,0 +1,76 @@
+.checkbox__label {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.checkbox__label--right .checkbox__text {
+	order: 1;
+}
+
+.checkbox__control {
+	position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.checkbox__input {
+	appearance: none;
+	display: none;
+}
+
+.checkbox__label--disabled {
+	cursor: not-allowed;
+}
+
+.checkbox__label--disabled .checkbox__track {
+	opacity: 12%;
+}
+
+.checkbox__label--disabled .checkbox__thumb {
+	opacity: 38%;
+}
+
+.checkbox__label--disabled.checkbox__label--checked .checkbox__thumb {
+	opacity: 1;
+}
+
+.checkbox__icon,
+.checkbox__icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox__icon--off {
+    fill: var(--white);
+}
+
+.checkbox__icon--on {
+    fill: rgba(0, 0, 0, 0.9);
+}
+
+
+.checkbox__label--icon-off .checkbox__thumb,
+.checkbox__label--icon-on .checkbox__thumb {
+    width: 24px;
+    height: 24px;
+    transform: translateX(6px) translateY(-50%);
+}
+
+.checkbox__label--icon-off.checkbox__label--checked .checkbox__thumb,
+.checkbox__label--icon-on.checkbox__label--checked .checkbox__thumb {
+    transform: translateX(24px) translateY(-50%);
+}
+
+.checkbox__label--icon-off.checkbox__label--checked .checkbox__icon--off,
+.checkbox__label--icon-off .checkbox__icon--on {
+    display: none;
+}
+
+.checkbox__label--icon-on.checkbox__label--checked .checkbox__icon--on {
+    display: block;
+}
