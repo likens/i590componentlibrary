@@ -15,7 +15,11 @@
     width: 20px;
     height: 20px;
     border: 2px solid black;
-    border-radius: 3px;
+    border-radius: 2px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox__input {
@@ -25,52 +29,42 @@
 
 .checkbox__label--disabled {
 	cursor: not-allowed;
-}
-
-.checkbox__label--disabled .checkbox__track {
-	opacity: 12%;
-}
-
-.checkbox__label--disabled .checkbox__thumb {
-	opacity: 38%;
-}
-
-.checkbox__label--disabled.checkbox__label--checked .checkbox__thumb {
-	opacity: 1;
+    opacity: 38%;
 }
 
 .checkbox__icon,
 .checkbox__icon svg {
-    width: 16px;
-    height: 16px;
-}
-
-.checkbox__icon--off {
+    width: 18px;
+    height: 18px;
     fill: var(--white);
 }
 
-.checkbox__icon--on {
-    fill: rgba(0, 0, 0, 0.9);
+.checkbox__icon {
+    position: absolute;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-
-.checkbox__label--icon-off .checkbox__thumb,
-.checkbox__label--icon-on .checkbox__thumb {
-    width: 24px;
-    height: 24px;
-    transform: translateX(6px) translateY(-50%);
+.checkbox__icon--check,
+.checkbox__icon--indeterminate {
+    opacity: 0;
 }
 
-.checkbox__label--icon-off.checkbox__label--checked .checkbox__thumb,
-.checkbox__label--icon-on.checkbox__label--checked .checkbox__thumb {
-    transform: translateX(24px) translateY(-50%);
+.checkbox__label--checked .checkbox__control,
+.checkbox__label--indeterminate .checkbox__control {
+    background: black;
 }
 
-.checkbox__label--icon-off.checkbox__label--checked .checkbox__icon--off,
-.checkbox__label--icon-off .checkbox__icon--on {
-    display: none;
+.checkbox__label--checked .checkbox__icon--check {
+    opacity: 1;
 }
 
-.checkbox__label--icon-on.checkbox__label--checked .checkbox__icon--on {
-    display: block;
+.checkbox__label--indeterminate .checkbox__icon--indeterminate {
+    opacity: 1;
+}
+
+.checkbox__label--indeterminate .checkbox__icon--check {
+    opacity: 0;
 }

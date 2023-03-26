@@ -90,7 +90,7 @@
 .switch__label--icon-on .switch__thumb {
     width: 24px;
     height: 24px;
-    transform: translateX(6px) translateY(-50%);
+    transform: translateX(5px) translateY(-50%);
 }
 
 .switch__label--icon-off.switch__label--checked .switch__thumb,

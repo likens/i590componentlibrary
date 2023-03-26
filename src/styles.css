@@ -40,12 +40,14 @@ code {
 }
 
 .components {
-	display: flex;
+	display: grid;
 	gap: 20px;
 }
 
 .textboxes,
-.switches {
+.switches,
+.checkboxes,
+.radios {
 	display: grid;
 	gap: 20px;
 }

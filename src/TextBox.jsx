@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./TextBox.css";
 
 const TextBoxTypes = {
     text: "text",
