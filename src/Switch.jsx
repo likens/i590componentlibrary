@@ -10,7 +10,7 @@ export default function Switch(props) {
         disabled,
         iconOn,
         iconOff,
-        color = "#671fda"
+        color = "#6750a4"
     } = props;
     
     const [inputChecked, setInputChecked] = useState(checked);
@@ -44,7 +44,7 @@ export default function Switch(props) {
     return (
         <div className="switch">
             <div className="switch__contain">
-                <label className={switchClass()}>
+                <label className={switchClass()} style={{color: color}}>
                     {labelText ? <div className="switch__text">{labelText}</div> : ``}
                     <div className="switch__control">
                         <div className="switch__track"></div>

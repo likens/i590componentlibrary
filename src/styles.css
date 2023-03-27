@@ -1,13 +1,13 @@
 :root {
 	--black: #000;
 	--white: #fff;
-	--pixelWhite: #dbdbdb;
-	--whiteSmoke: #f5f5f5;
-	--coronation: #ececec;
-	--sugarPine: #74796e;
-	--greening: #dfe4d6;
-	--radicalGreen: #386a20;
-	--nasuPurple: #671fda;
+	
+	--gluonGrey: #1c1b1f;
+	--ishtar: #49454f;
+	--pinkChampagne: #e7e0ec;
+	--ironMaiden: #d7d0dc;
+	--driedLavenderFlowers: 121, 116, 126;
+	--nasuPurple: 103, 31, 218;
 	--incarnadine: #b00020;
 	--textBoxStart: 16px;
 }

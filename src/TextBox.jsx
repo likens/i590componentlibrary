@@ -20,7 +20,7 @@ export default function TextBox(props) {
         required,
         iconLeft,
         iconRight,
-        color = "#671fda"
+        color = "#6750a4"
     } = props;
 
     const [inputFocused, setInputFocused] = useState(false);

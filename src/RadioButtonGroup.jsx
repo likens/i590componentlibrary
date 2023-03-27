@@ -21,13 +21,15 @@ export default function RadioButtonGroup(props) {
             <div className="radio-group__contain">
                 {radios.map((rb,i) => 
                     <RadioButton 
+                        color={color}
                         radioChanged={(id) => radioChanged(id)}
                         id={rb.id ? rb.id : rb.value} 
                         key={i} 
                         name={name} 
                         labelRight={labelRight}
                         checked={value === rb.value}
-                        {...rb} />)}
+                        {...rb} />
+                    )}
             </div>
         </div>
   );

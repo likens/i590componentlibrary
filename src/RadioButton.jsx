@@ -44,11 +44,12 @@ export default function RadioButton(props) {
     return (
         <div className="radio">
             <div className="radio__contain">
-                <label htmlFor={id} className={radioButtonClass()}>
+                <label htmlFor={id} className={radioButtonClass()} style={{color: color}}>
                     {labelText ? <div className="radio__text">{labelText}</div> : ``}
                     <div className="radio__control">
                         <span className="radio__icon"></span>
                     </div>
+                    <div className="radio__circle"></div>
                     <input onChange={(e) => onChange(e)}
                         id={id}
                         name={name}

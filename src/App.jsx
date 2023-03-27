@@ -3,6 +3,7 @@ import Switch from "./Switch";
 import CheckBox from "./CheckBox";
 import RadioButton from "./RadioButton";
 import RadioButtonGroup from "./RadioButtonGroup";
+import SegmentedButtonGroup from "./SegmentedButtonGroup";
 import "./styles.css";
 
 const lockIcon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960"><path d="M220 976q-24.75 0-42.375-17.625T160 916V482q0-24.75 17.625-42.375T220 422h70v-96q0-78.85 55.606-134.425Q401.212 136 480.106 136T614.5 191.575Q670 247.15 670 326v96h70q24.75 0 42.375 17.625T800 482v434q0 24.75-17.625 42.375T740 976H220Zm260.168-200Q512 776 534.5 753.969T557 701q0-30-22.668-54.5t-54.5-24.5Q448 622 425.5 646.5t-22.5 55q0 30.5 22.668 52.5t54.5 22ZM350 422h260v-96q0-54.167-37.882-92.083-37.883-37.917-92-37.917Q426 196 388 233.917 350 271.833 350 326v96Z"/></svg>;
@@ -13,91 +14,85 @@ const doneIcon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
 
 const closeIcon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>;
 
+const themeColor = "#671fda";
+
 export default function App() {
   return (
-    <div style={{padding: 20}}>
-		TODO:
-		<ol>
-			<li>textbox - border color animated from middle</li>
-			<li>switch - hover feedback</li>
-			<li>switch - color support</li>
-			<li>checkbox - hover feedback</li>
-			<li>checkbox - color support</li>
-			<li>radio - hover feedback</li>
-			<li>radio - color support</li>
-		</ol>
+    <div style={{padding: "0 20px 20px"}}>
 		<div className="components">
 			<div className="component">
 				<h2>&lt;TextBox /&gt;</h2>
 				<div className="textboxes">
-					<TextBox />
-					<TextBox label="Email" placeholder="name@domain.com" type="email" />
-					<TextBox label="Password" type="password" />
-					<TextBox label="Required" required={true} value="Default value" />
-					<TextBox label="Disabled" disabled={true} />
-					<TextBox label="Error" errorMsg={"Error message"} />
-					<TextBox label="Icons" iconLeft={lockIcon} iconRight={visibilityIcon} />
-					<TextBox label="Gold" placeholder="Gold" color="gold" />
+					<TextBox color={themeColor} />
+					<TextBox label="Email" placeholder="name@domain.com" type="email" color={themeColor} />
+					<TextBox label="Password" type="password" color={themeColor} />
+					<TextBox label="Required" required={true} value="Default value" color={themeColor} />
+					<TextBox label="Disabled" disabled={true} color={themeColor} />
+					<TextBox label="Error" errorMsg={"Error message"} color={themeColor} />
+					<TextBox label="Icons" iconLeft={lockIcon} iconRight={visibilityIcon} color={themeColor} />
+					<TextBox label="Green Color" placeholder="Green" color="green" />
 				</div>
 			</div>
 			<div className="component">
 				<h2>&lt;Switch /&gt;</h2>
 				<div className="switches">
-					<Switch />
-					<Switch checked={true} labelRight={true} labelText="Pre-checked" />
-					<Switch disabled={true} labelRight={true} labelText="Disabled" />
-					<Switch disabled={true} checked={true} labelRight={true} labelText="Pre-checked disabled" />
-					<Switch iconOn={doneIcon} iconOff={closeIcon} labelRight={true} labelText="Icons" />
-					<Switch labelText="Label on left of switch" />
+					<Switch color={themeColor} />
+					<Switch checked={true} labelRight={true} labelText="Pre-checked" color={themeColor} />
+					<Switch disabled={true} labelRight={true} labelText="Disabled" color={themeColor} />
+					<Switch disabled={true} checked={true} labelRight={true} labelText="Pre-checked disabled" color={themeColor} />
+					<Switch iconOn={doneIcon} iconOff={closeIcon} labelRight={true} labelText="Icons" color={themeColor} />
+					<Switch labelText="Label on left of switch" color={themeColor} />
 				</div>
 			</div>
 			<div className="component">
 				<h2>&lt;CheckBox /&gt;</h2>
 				<div className="checkboxes">
-					<CheckBox />
-					<CheckBox checked={true} labelRight={true} labelText="Pre-checked" />
-					<CheckBox indeterminate={true} labelRight={true} checked={true} labelText="Indeterminate" />
-					<CheckBox disabled={true} labelRight={true} labelText="Disabled" />
-					<CheckBox disabled={true} checked={true}  labelRight={true} labelText="Pre-checked disabled" />
-					<CheckBox labelText="Label on left of checkbox" />
+					<CheckBox color={themeColor} />
+					<CheckBox checked={true} labelRight={true} labelText="Pre-checked" color={themeColor} />
+					<CheckBox indeterminate={true} labelRight={true} checked={true} labelText="Indeterminate" color={themeColor} />
+					<CheckBox disabled={true} labelRight={true} labelText="Disabled" color={themeColor} />
+					<CheckBox disabled={true} checked={true}  labelRight={true} labelText="Pre-checked disabled" color={themeColor} />
+					<CheckBox labelText="Label on left of checkbox" color={themeColor} />
 				</div>
 			</div>
 			<div className="component">
 				<h2>&lt;RadioButton /&gt;</h2>
 				<div className="radios">
-					<RadioButton />
-					<RadioButton checked={true} labelRight={true} labelText="Pre-checked" />
-					<RadioButton disabled={true} labelRight={true} labelText="Disabled" />
-					<RadioButton disabled={true} checked={true}  labelRight={true} labelText="Pre-checked disabled" />
-					<RadioButton labelText="Label on left of radio button" />
+					<RadioButton color={themeColor} />
+					<RadioButton checked={true} labelRight={true} labelText="Pre-checked" color={themeColor} />
+					<RadioButton disabled={true} labelRight={true} labelText="Disabled" color={themeColor} />
+					<RadioButton disabled={true} checked={true}  labelRight={true} labelText="Pre-checked disabled" color={themeColor} />
+					<RadioButton labelText="Label on left of radio button" color={themeColor} />
 				</div>
 			</div>
 			<div className="component">
 				<h2>&lt;RadioButtonGroup /&gt;</h2>
 				<div className="radios">
-					<RadioButtonGroup 
+					<RadioButtonGroup
+					 	color={themeColor}
 						name="radioButtonGroup" 
 						radios={[
-							{ value: 1, labelText: "Radio 1" },
-							{ value: 2, labelText: "Radio 2" },
-							{ value: 3, labelText: "Radio 3" },
-							{ value: 4, disabled: true, labelText: "Disabled" },
-							{ value: 5, labelText: "Radio 5" }
+							{ value: "radio1", labelText: "Radio 1" },
+							{ value: "radio2", labelText: "Radio 2" },
+							{ value: "radio3", labelText: "Radio 3" },
+							{ value: "radio4", disabled: true, labelText: "Disabled" },
+							{ value: "radio5", labelText: "Radio 5" }
 						]} />
 				</div>
 			</div>
 			<div className="component">
 				<h2>&lt;SegmentedButton /&gt;</h2>
 				<div className="segmented">
-					{/* <SegmentedButton 
-						name="segmentedButton" 
+					<SegmentedButtonGroup 
+					 	color={themeColor}
+						name="segmentedButtonGroup" 
 						buttons={[
-							{ value: 1, labelText: "Button 1" },
-							{ value: 2, labelText: "Button 2" },
-							{ value: 3, labelText: "Button 3" },
-							{ value: 4, disabled: true, labelText: "Disabled Button" },
-							{ value: 5, labelText: "Button 5" }
-						]} /> */}
+							{ value: "segbtn1", labelText: "Button 1" },
+							{ value: "segbtn2", labelText: "Button 2" },
+							{ value: "segbtn3", labelText: "Button 3" },
+							{ value: "segbtn4", disabled: true, labelText: "Disabled" },
+							{ value: "segbtn5", labelText: "Button 5" }
+						]} />
 				</div>
 			</div>
 		</div>

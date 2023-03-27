@@ -1,0 +1,116 @@
+.seg-btn-group__contain {
+    display: inline-flex;
+    font-weight: 700;
+    gap: 1px;
+    position: relative;
+}
+
+.seg-btn__label {
+    padding: 0 12px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: rgba(var(--driedLavenderFlowers), 1);
+    color: var(--gluonGrey);
+    background: var(--white);
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.seg-btn__label:hover {
+    background: rgba(var(--nasuPurple), .2);
+}
+
+.seg-btn__label--disabled + .seg-btn__label:before,
+.seg-btn__label:after {
+    content: '';
+    width: 1px;
+    height: calc(100% + 2px);
+    background: rgba(var(--driedLavenderFlowers), 1);
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}
+
+.seg-btn__label:first-child {
+    border-left-width: 1px;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+.seg-btn__label:last-child {
+    border-right-width: 1px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.seg-btn__label--checked {
+    background: rgba(var(--nasuPurple), .1);
+}
+
+.seg-btn__label:focus,
+.seg-btn__label:active {
+    background: rgba(var(--nasuPurple), .3);
+}
+
+.seg-btn__label--disabled + .seg-btn__label:before {
+    right: auto;
+    left: -1px;
+}
+
+.seg-btn__input {
+    display: none;
+}
+
+.seg-btn__label--disabled {
+    opacity: 38%;
+    z-index: 10;
+}
+
+.seg-btn__icon,
+.seg-btn__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.seg-btn__icon {
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.seg-btn__text {
+    position: relative;
+    z-index: 10;
+    color: var(--gluonGrey);
+}
+
+
+.seg-btn__label--checked .seg-btn__icon {
+    opacity: 1;
+    visibility: visible;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.seg-btn__label:last-child:after,
+.seg-btn__label--disabled:after,
+.seg-btn__label--disabled .seg-btn__icon {
+    display: none;
+}
+
+.seg-btn__label--disabled:hover {
+    background: 0;
+    cursor: not-allowed;
+}

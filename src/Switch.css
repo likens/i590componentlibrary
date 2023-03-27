@@ -1,3 +1,7 @@
+.switch__contain {
+	display: flex;
+}
+
 .switch__label {
 	display: flex;
 	align-items: center;
@@ -18,21 +22,25 @@
 	width: 52px;
 	height: 32px;
 	border-radius: 20px;
-	border: 2px solid var(--sugarPine);
-	background: var(--greening);
+	border: 2px solid rgba(var(--driedLavenderFlowers), 1);
+	background: var(--pinkChampagne);
 }
 
 .switch__thumb {
 	width: 16px;
 	height: 16px;
 	border-radius: 50%;
-	background: var(--sugarPine);
+	background: rgba(var(--driedLavenderFlowers), 1);
 	position: absolute;
 	top: 50%;
 	left: 0;
 	transform: translateX(8px) translateY(-50%);
 	transform-origin: left;
-	transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), width 150ms cubic-bezier(0.4, 0, 0.2, 1), height 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), 
+				width 150ms cubic-bezier(0.4, 0, 0.2, 1), 
+				height 150ms cubic-bezier(0.4, 0, 0.2, 1),
+				background 150ms cubic-bezier(0.4, 0, 0.2, 1),
+				opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,8 +52,8 @@
 }
 
 .switch__label--checked .switch__track {
-	background: var(--radicalGreen);
-	border-color: var(--radicalGreen)
+	background: currentColor;
+	border-color: currentColor;
 }
 
 .switch__label--checked .switch__thumb {
@@ -69,6 +77,10 @@
 
 .switch__label--disabled.switch__label--checked .switch__thumb {
 	opacity: 1;
+}
+
+.switch__text {
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .switch__icon,
@@ -105,4 +117,31 @@
 
 .switch__label--icon-on.switch__label--checked .switch__icon--on {
     display: block;
+}
+
+.switch__label--disabled.switch__label--checked .switch__track {
+	color: rgba(var(--driedLavenderFlowers), 1);
+}
+
+.switch__label:hover .switch__thumb {
+	background: var(--ishtar);
+}
+
+.switch__label.switch__label--checked:hover .switch__thumb {
+	background: var(--white);
+	opacity: .9;
+}
+
+.switch__label:active .switch__thumb,
+.switch__label:focus .switch__thumb {
+	width: 28px;
+	height: 28px;
+	transform: translateX(2px) translateY(-50%);
+}
+
+.switch__label.switch__label--checked:active .switch__thumb,
+.switch__label.switch__label--checked:focus .switch__thumb {
+	width: 28px;
+	height: 28px;
+	transform: translateX(22px) translateY(-50%);
 }

@@ -12,7 +12,7 @@ export default function CheckBox(props) {
         labelRight = false,
         disabled,
         indeterminate,
-        color = "#671fda"
+        color = "#6750a4"
     } = props;
     
     const [inputChecked, setInputChecked] = useState(checked);
@@ -44,7 +44,7 @@ export default function CheckBox(props) {
     return (
         <div className="checkbox">
             <div className="checkbox__contain">
-                <label className={checkBoxClass()}>
+                <label className={checkBoxClass()} style={{color: color}}>
                     {labelText ? <div className="checkbox__text">{labelText}</div> : ``}
                     <div className="checkbox__control">
                         <span className="checkbox__icon checkbox__icon--check">
@@ -54,6 +54,7 @@ export default function CheckBox(props) {
                             {removeIcon}
                         </span>
                     </div>
+                    <div className="checkbox__circle"></div>
                     <input onChange={(e) => onChange(e)} disabled={inputDisabled} checked={inputChecked} type="checkbox" className="checkbox__input" />
                 </label>
             </div>

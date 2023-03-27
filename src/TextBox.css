@@ -5,7 +5,7 @@
 
 .textbox__box {
 	display: flex;
-	background: var(--whiteSmoke);
+	background: var(--pinkChampagne);
 	height: 56px;
 	padding: 0 16px;
 	position: relative;
@@ -17,13 +17,13 @@
 }
 
 .textbox__box:hover {
-	background: var(--coronation);
+	background: var(--ironMaiden);
 	border-color: rgba(0, 0, 0, 0.87);
 }
 
 .textbox__box--focused,
 .textbox__box--focused:hover {
-	background: var(--pixelWhite);
+	background: var(--pinkChampagne);
 }
 
 .textbox__border {
@@ -99,7 +99,7 @@
 }
 
 .textbox__box--disabled:hover {
-	background: var(--whiteSmoke);
+	background: var(--pinkChampagne);
 }
 
 .textbox__box--disabled * {
