@@ -54,7 +54,7 @@ export default function SillyStoryGenerator() {
                         handleChange={handleRadioButtonChange}
                         radios={[{ value: "fahrenheit", labelText: "US", default: true }, { value: "centigrade", labelText: "UK" }]} />
                 </div>
-                <Button handleClick={handleClick} buttonText="Generate Story" width={300} />
+                <Button handleClick={handleClick} buttonText="Generate Random Story" width={300} />
             </div>
             {story ? <div style={{margin: "30px 0", 
                 maxWidth: 450, 
