@@ -1,0 +1,38 @@
+.button {
+    width: 100%;
+}
+.button__button {
+    background: currentColor;
+    border: 2px solid currentColor;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button__text {
+    color: currentColor;
+}
+.button--disabled {
+    opacity: 76%;
+}
+.button--disabled .button__button {
+    color: #e4e0e3 !important;
+}
+.button--disabled .button__text {
+    color: #999798 !important;
+}
+.button:not(.button--disabled) .button__button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22), 0 3px 18px rgba(0, 0, 0, 0.3);
+}
+.button:not(.button--disabled) .button__button:active,
+.button:not(.button--disabled) .button__button:focus {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.22);
+}

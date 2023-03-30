@@ -20,7 +20,9 @@ export default function TextBox(props) {
         required,
         iconLeft,
         iconRight,
-        color = "#6750a4"
+        width,
+        color = "#6750a4",
+        handleChange
     } = props;
 
     const [inputFocused, setInputFocused] = useState(false);
@@ -37,12 +39,14 @@ export default function TextBox(props) {
     };
 
     const onChange = (e) => {
-        setInputValue(e.target.value);
-        if (e.target.value) {
+        const value = e.target.value;
+        setInputValue(value);
+        if (value) {
             setInputActivated(true);
         } else {
             setInputActivated(false)
         }
+        handleChange(value);
     }
 
     const textBoxClass = () => {
@@ -83,7 +87,7 @@ export default function TextBox(props) {
 
   return (
     <div className="textbox">
-        <div className="textbox__contain" style={{color: color}}>
+        <div className="textbox__contain" style={{color: color, width: width}}>
             <label className={textBoxClass()}>
                 {iconLeft ? <span className="textbox__icon textbox__icon--left">{iconLeft}</span> : ``}
                 <input
@@ -101,9 +105,9 @@ export default function TextBox(props) {
                 <span className="textbox__border"></span>
                 {iconRight ? <span className="textbox__icon textbox__icon--right">{iconRight}</span> : ``}
             </label>
-            <div className="textbox__helper">
+            {textBoxHelper() && <div className="textbox__helper">
                 {textBoxHelper()}
-            </div>
+            </div>}
         </div>
     </div>
   );

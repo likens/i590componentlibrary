@@ -42,6 +42,7 @@ code {
 .components {
 	display: grid;
 	gap: 20px;
+	padding: 0 20px 20px;
 }
 
 .textboxes,
@@ -50,4 +51,8 @@ code {
 .radios {
 	display: grid;
 	gap: 20px;
+}
+
+.silly-story {
+	padding: 0 20px 20px;
 }
