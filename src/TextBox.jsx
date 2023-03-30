@@ -11,7 +11,7 @@ export default function TextBox(props) {
 
   const { 
         type = TextBoxTypes.text, 
-        value, 
+        value = "", 
         label = "Label", 
         placeholder = "Placeholder", 
         helperMsg,
